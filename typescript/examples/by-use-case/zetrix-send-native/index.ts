@@ -3,9 +3,7 @@ import readline from "node:readline";
 import { openai } from "@ai-sdk/openai";
 import { generateText } from "ai";
 import { getOnChainTools } from "@goat-sdk/adapter-vercel-ai";
-import { zetrix } from "../../../packages/wallets/zetrix/src/ZetrixWalletClient";
-import { sendZETRIX } from "../../../packages/wallets/zetrix/src/sendZETRIX.plugin";
-// import { zetrix, sendZETRIX } from "@goat-sdk/wallet-zetrix";
+import { zetrix, sendZETRIX } from "@goat-sdk/wallet-zetrix";
 import ZtxChainSDK from "zetrix-sdk-nodejs";
 
 require("dotenv").config();
