@@ -4,60 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-catalogs:
-  default:
-    '@langchain/core':
-      specifier: 0.3.6
-      version: 0.3.6
-    '@lit-protocol/auth-helpers':
-      specifier: 7.0.2
-      version: 7.0.2
-    '@lit-protocol/constants':
-      specifier: 7.0.2
-      version: 7.0.2
-    '@lit-protocol/contracts-sdk':
-      specifier: 7.0.2
-      version: 7.0.2
-    '@lit-protocol/lit-auth-client':
-      specifier: 7.0.2
-      version: 7.0.2
-    '@lit-protocol/lit-node-client':
-      specifier: 7.0.2
-      version: 7.0.2
-    '@lit-protocol/misc':
-      specifier: 7.0.2
-      version: 7.0.2
-    '@lit-protocol/types':
-      specifier: 7.0.2
-      version: 7.0.2
-    '@lit-protocol/wrapped-keys':
-      specifier: 7.0.2
-      version: 7.0.2
-    '@modelcontextprotocol/sdk':
-      specifier: 1.0.4
-      version: 1.0.4
-    '@solana/spl-token':
-      specifier: 0.4.9
-      version: 0.4.9
-    '@solana/web3.js':
-      specifier: 1.98.0
-      version: 1.98.0
-    ai:
-      specifier: 4.0.3
-      version: 4.0.3
-    radix-web3.js:
-      specifier: 0.3.1
-      version: 0.3.1
-    viem:
-      specifier: 2.23.4
-      version: 2.23.4
-    zod:
-      specifier: 3.23.8
-      version: 3.23.8
-    zod-to-json-schema:
-      specifier: 3.23.5
-      version: 3.23.5
-
 importers:
 
   .:
@@ -782,6 +728,37 @@ importers:
       zod:
         specifier: 3.23.8
         version: 3.23.8
+
+  examples/by-use-case/zetrix-send-native:
+    dependencies:
+      '@ai-sdk/openai':
+        specifier: ~1.0.4
+        version: 1.0.20(zod@3.23.8)
+      '@goat-sdk/adapter-vercel-ai':
+        specifier: 0.2.9
+        version: link:../../../packages/adapters/vercel-ai
+      '@goat-sdk/core':
+        specifier: 0.4.8
+        version: link:../../../packages/core
+      ai:
+        specifier: ~4.0.3
+        version: 4.0.22(react@18.3.1)(zod@3.23.8)
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.7
+      viem:
+        specifier: 2.23.4
+        version: 2.23.4(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.23.8)
+      zetrix-sdk-nodejs:
+        specifier: ^1.0.1
+        version: 1.0.1
+      zod:
+        specifier: 3.23.8
+        version: 3.23.8
+    devDependencies:
+      '@types/zetrix-sdk-nodejs':
+        specifier: ^1.0.1
+        version: 1.0.1
 
   examples/by-wallet/crossmint-smart-wallets:
     dependencies:
@@ -9431,6 +9408,7 @@ packages:
   bson@6.10.1:
     resolution: {integrity: sha512-P92xmHDQjSKPLHqFxefqMxASNq/aWJMEZugpCjf+AF/pgcUpMMQCg7t7+ewko0/u8AapvF3luf/FoehddEK+sA==}
     engines: {node: '>=16.20.1'}
+    deprecated: a critical bug affecting only useBigInt64=true deserialization usage is fixed in bson@6.10.3
 
   buffer-equal-constant-time@1.0.1:
     resolution: {integrity: sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA==}
@@ -16098,16 +16076,17 @@ packages:
   yup@1.6.1:
     resolution: {integrity: sha512-JED8pB50qbA4FOkDol0bYF/p60qSEDQqBD0/qeIrUCG1KbPBIQ776fCUNb9ldbPcSTxA69g/47XTo4TqWiuXOA==}
 
-  zetrix-encryption-nodejs@1.0.0:
-    resolution: {integrity: sha512-g2SwckuN4xfW0GwAGWks5ItzGGuw8wTfEuD/eYJmuhqrR2WUOvZ+qiiR+jGKkragtiZRskVr6Qs3rPS7OW1U/A==}
-
-  zetrix-sdk-nodejs@1.0.1:
-    resolution: {integrity: sha512-DGkjT1WMb5Yhus5R5SzfUN9M8PA/o1a83lsw+FPPHkPv0/vGg7vVRrGGPPAmGG3G5fwe9yGNvilZTnyIkOKhEA==}
   zen-observable-ts@1.2.5:
     resolution: {integrity: sha512-QZWQekv6iB72Naeake9hS1KxHlotfRpe+WGNbNx5/ta+R3DNjVO2bswf63gXlWDcs+EMd7XY8HfVQyP1X6T4Zg==}
 
   zen-observable@0.8.15:
     resolution: {integrity: sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==}
+
+  zetrix-encryption-nodejs@1.0.0:
+    resolution: {integrity: sha512-g2SwckuN4xfW0GwAGWks5ItzGGuw8wTfEuD/eYJmuhqrR2WUOvZ+qiiR+jGKkragtiZRskVr6Qs3rPS7OW1U/A==}
+
+  zetrix-sdk-nodejs@1.0.1:
+    resolution: {integrity: sha512-DGkjT1WMb5Yhus5R5SzfUN9M8PA/o1a83lsw+FPPHkPv0/vGg7vVRrGGPPAmGG3G5fwe9yGNvilZTnyIkOKhEA==}
 
   zhead@2.2.4:
     resolution: {integrity: sha512-8F0OI5dpWIA5IGG5NHUg9staDwz/ZPxZtvGVf01j7vHqSyZ0raHY+78atOVxRqb73AotX22uV1pXt3gYSstGag==}
@@ -26218,30 +26197,6 @@ snapshots:
       chai: 5.1.2
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.9(vite@5.4.11(@types/node@18.19.69)(terser@5.37.0))':
-    dependencies:
-      '@vitest/spy': 2.1.9
-      estree-walker: 3.0.3
-      magic-string: 0.30.17
-    optionalDependencies:
-      vite: 5.4.11(@types/node@18.19.69)(terser@5.37.0)
-
-  '@vitest/mocker@2.1.9(vite@5.4.11(@types/node@20.17.11)(terser@5.37.0))':
-    dependencies:
-      '@vitest/spy': 2.1.9
-      estree-walker: 3.0.3
-      magic-string: 0.30.17
-    optionalDependencies:
-      vite: 5.4.11(@types/node@20.17.11)(terser@5.37.0)
-
-  '@vitest/mocker@2.1.9(vite@5.4.11(@types/node@22.13.9)(terser@5.37.0))':
-    dependencies:
-      '@vitest/spy': 2.1.9
-      estree-walker: 3.0.3
-      magic-string: 0.30.17
-    optionalDependencies:
-      vite: 5.4.11(@types/node@22.13.9)(terser@5.37.0)
-
   '@vitest/mocker@2.1.9(vite@5.4.11(@types/node@22.7.4)(terser@5.37.0))':
     dependencies:
       '@vitest/spy': 2.1.9
@@ -35614,7 +35569,7 @@ snapshots:
   vitest@2.1.9(@types/node@18.19.69)(terser@5.37.0):
     dependencies:
       '@vitest/expect': 2.1.9
-      '@vitest/mocker': 2.1.9(vite@5.4.11(@types/node@18.19.69)(terser@5.37.0))
+      '@vitest/mocker': 2.1.9(vite@5.4.11(@types/node@22.7.4)(terser@5.37.0))
       '@vitest/pretty-format': 2.1.9
       '@vitest/runner': 2.1.9
       '@vitest/snapshot': 2.1.9
@@ -35649,7 +35604,7 @@ snapshots:
   vitest@2.1.9(@types/node@20.17.11)(terser@5.37.0):
     dependencies:
       '@vitest/expect': 2.1.9
-      '@vitest/mocker': 2.1.9(vite@5.4.11(@types/node@20.17.11)(terser@5.37.0))
+      '@vitest/mocker': 2.1.9(vite@5.4.11(@types/node@22.7.4)(terser@5.37.0))
       '@vitest/pretty-format': 2.1.9
       '@vitest/runner': 2.1.9
       '@vitest/snapshot': 2.1.9
@@ -35684,7 +35639,7 @@ snapshots:
   vitest@2.1.9(@types/node@22.13.9)(terser@5.37.0):
     dependencies:
       '@vitest/expect': 2.1.9
-      '@vitest/mocker': 2.1.9(vite@5.4.11(@types/node@22.13.9)(terser@5.37.0))
+      '@vitest/mocker': 2.1.9(vite@5.4.11(@types/node@22.7.4)(terser@5.37.0))
       '@vitest/pretty-format': 2.1.9
       '@vitest/runner': 2.1.9
       '@vitest/snapshot': 2.1.9
@@ -36324,6 +36279,12 @@ snapshots:
       toposort: 2.0.2
       type-fest: 2.19.0
 
+  zen-observable-ts@1.2.5:
+    dependencies:
+      zen-observable: 0.8.15
+
+  zen-observable@0.8.15: {}
+
   zetrix-encryption-nodejs@1.0.0:
     dependencies:
       crypto-js: 3.3.0
@@ -36345,11 +36306,6 @@ snapshots:
       request: 2.88.2
       request-promise: 4.2.6(request@2.88.2)
       zetrix-encryption-nodejs: 1.0.0
-  zen-observable-ts@1.2.5:
-    dependencies:
-      zen-observable: 0.8.15
-
-  zen-observable@0.8.15: {}
 
   zhead@2.2.4: {}
 
